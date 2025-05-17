@@ -18,4 +18,6 @@ lxml>=4.9.3
 plotly>=5.16.1
 dash>=2.13.0
 reportlab>=4.0.4
-ipaddress>=1.0.23 
+ipaddress>=1.0.23
+pefile>=2023.2.7
+python-magic-bin>=0.4.14; platform_system == "Windows" 
