@@ -1,0 +1,67 @@
+# SOC Toolkit Configuration
+
+# API Keys (Replace with your actual keys)
+api_keys:
+  virustotal: "your_vt_api_key"
+  misp: "your_misp_api_key"
+  elasticsearch: "your_es_api_key"
+
+# Service URLs
+urls:
+  misp_url: "https://your-misp-instance.com"
+  elasticsearch_url: "http://localhost:9200"
+  threat_feeds:
+    - "https://feodotracker.abuse.ch/downloads/ipblocklist.csv"
+    - "https://urlhaus.abuse.ch/downloads/csv_recent/"
+
+# Log Sources
+log_sources:
+  windows_events:
+    - "Security"
+    - "System"
+    - "Application"
+  syslog:
+    - "/var/log/syslog"
+    - "/var/log/auth.log"
+  custom_logs:
+    - path: "/path/to/custom/logs"
+      format: "csv"
+
+# Analysis Settings
+analysis:
+  log_retention_days: 30
+  alert_threshold: 5
+  scan_interval: 300  # seconds
+
+# Reporting
+reporting:
+  report_directory: "./reports"
+  dashboard_port: 8050
+  alert_summary_interval: "1h"
+
+# Network Monitoring
+network:
+  interface: "eth0"
+  pcap_directory: "./pcaps"
+  capture_filters:
+    - "port 80"
+    - "port 443"
+    - "port 53"
+
+# Malware Analysis
+malware:
+  sandbox_url: "http://your-sandbox-instance"
+  sample_directory: "./samples"
+  yara_rules_path: "./rules"
+
+# Incident Response
+incident_response:
+  evidence_path: "./evidence"
+  timeline_format: "csv"
+  memory_dump_path: "./memory_dumps"
+
+# Utilities
+utils:
+  temp_directory: "./temp"
+  max_threads: 4
+  debug_mode: false 
